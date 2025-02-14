@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# **📖 Recipe App Documentation**  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **📌 Project Overview**  
+The **Recipe App** allows users to **search for recipes**, view **detailed information**, and **save their favorite recipes**. It fetches data from the **Edamam API** and uses **ReactJS and Redux** for state management.  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **📋 Features**  
+✔️ **Search Recipes** by entering keywords.  
+✔️ **Display Recipe List** with images, titles, and descriptions.  
+✔️ **View Recipe Details** including ingredients and preparation steps.  
+✔️ **Mark Recipes as Favorites** and store them in a separate list.  
+✔️ **Filter Recipes** by dietary restrictions (vegetarian, gluten-free, etc.).  
+✔️ **Error Handling** for API request limits.  
+✔️ **Debounced Search** to prevent excessive API calls.  
+✔️ **Local Caching** to reduce API requests.  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **⚙️ Technologies Used**  
+- **Frontend:** ReactJS, React Router  
+- **State Management:** Redux Toolkit  
+- **API Handling:** Axios  
+- **Styling:** CSS  
+- **Data Storage:** Local Storage  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## **🛠 Installation & Setup**  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **📌 1. Clone the Repository**  
+```sh
+git clone https://github.com/GKrizz/recipe-app.git
+cd recipe-app
+```
 
-### `npm run build`
+### **📌 2. Install Dependencies**  
+```sh
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **📌 3. Set Up API Key**  
+- Get a **free API key** from [Edamam API](https://developer.edamam.com/).  
+- Replace in `recipesSlice.js`:  
+```js
+const API_ID = "your_api_id";
+const API_KEY = "your_api_key";
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **📌 4. Start the Application**  
+```sh
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## **📂 Project Structure**  
+```
+📦 recipe-app
+ ┣ 📂 src
+ ┃ ┣ 📂 components
+ ┃ ┃ ┣ 📜 SearchBar.js
+ ┃ ┃ ┣ 📜 RecipeList.js
+ ┃ ┃ ┣ 📜 RecipeCard.js
+ ┃ ┃ ┗ 📜 FavoritesList.js
+ ┃ ┣ 📂 pages
+ ┃ ┃ ┣ 📜 Home.js
+ ┃ ┃ ┗ 📜 Favorites.js
+ ┃ ┣ 📂 redux
+ ┃ ┃ ┣ 📂 slices
+ ┃ ┃ ┃ ┣ 📜 recipesSlice.js
+ ┃ ┃ ┃ ┗ 📜 favoritesSlice.js
+ ┃ ┃ ┗ 📜 store.js
+ ┃ ┣ 📜 App.js
+ ┃ ┣ 📜 index.js
+ ┃ ┗ 📜 styles.css
+ ┣ 📜 package.json
+ ┗ 📜 README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **📝 API Reference (Edamam API)**  
+- **Base URL:**  
+  ```
+  https://api.edamam.com/search
+  ```
+- **Query Parameters:**  
+  | Parameter | Description | Example |
+  |-----------|-------------|----------|
+  | `q` | Search keyword | `pizza` |
+  | `app_id` | API ID | `your_api_id` |
+  | `app_key` | API Key | `your_api_key` |
+  | `from` | Start index | `0` |
+  | `to` | Number of results | `10` |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Example API Request:**  
+  ```sh
+  https://api.edamam.com/search?q=pizza&app_id=your_api_id&app_key=your_api_key&from=0&to=10
+  ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **🔧 Future Improvements**
+🔹 Add **user authentication** to save favorites.  
+🔹 Implement **pagination** for more search results.  
+🔹 Improve **UI/UX** with better design.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## **🛠 Troubleshooting**
+| **Issue** | **Solution** |
+|-----------|-------------|
+| `429 Error: Too Many Requests` | Use **your own API key**, **add delay between requests**, or **cache responses**. |
+| `Recipes not displaying` | Check if the API is **returning valid data**. Use **console.log(response.data)** to debug. |
+| `Redux state not updating` | Ensure **reducers** are correctly set up in `store.js`. |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## **📜 License**  
+This project is open-source and available under the **MIT License**.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **📬 Contact**  
+For any questions or improvements, feel free to **open an issue** or **contribute** to the project! 😊🚀
