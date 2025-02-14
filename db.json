@@ -1,0 +1,35 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "label": "Classic Margherita Pizza",
+        "image": "https://www.example.com/images/margherita.jpg",
+        "calories": 350,
+        "ingredients": ["Dough", "Tomato Sauce", "Mozzarella Cheese", "Basil"],
+        "category": "Dinner",
+        "instructions": "Bake at 220°C for 12 minutes.",
+        "servings": 2
+      },
+      {
+        "id": 2,
+        "label": "Veggie Burger",
+        "image": "https://www.example.com/images/veggieburger.jpg",
+        "calories": 250,
+        "ingredients": ["Burger Bun", "Lettuce", "Tomato", "Veggie Patty"],
+        "category": "Lunch",
+        "instructions": "Grill patty and assemble with bun and veggies.",
+        "servings": 1
+      },
+      {
+        "id": 3,
+        "label": "Pasta Alfredo",
+        "image": "https://www.example.com/images/alfredo.jpg",
+        "calories": 450,
+        "ingredients": ["Pasta", "Cream", "Garlic", "Parmesan Cheese"],
+        "category": "Dinner",
+        "instructions": "Boil pasta and mix with Alfredo sauce.",
+        "servings": 2
+      }
+    ]
+  }
+  
